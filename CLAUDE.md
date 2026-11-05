@@ -44,4 +44,4 @@ La fuente de verdad es `docs/Documento_base_fidelizacion_v0.1.docx` (podés leer
 - F8 Mar 10: correcciones y demo.
 
 ## Estado actual
-Fase 0 sin empezar. Documentación lista en `docs/`.
+Fase 0 completa (4/11). Web publicada en https://fidelizacion-ten.vercel.app (página de ejemplo). Supabase creado y vacío; claves en `.env.local` y Vercel. Próximo: Fase 1. Detalle en `docs/bitacora.md`.
