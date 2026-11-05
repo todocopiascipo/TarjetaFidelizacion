@@ -1,0 +1,53 @@
+Proto prompt – Plataforma de tarjetas de fidelización digitales
+Contexto
+Trabajo en una imprenta que hace tarjetas de fidelización en papel (cupones que se perforan con cada compra). Quiero ofrecerles a mis clientes, negocios chicos como la hamburguesería Valisburger, una versión digital: que el cliente final no pierda la tarjeta y que al negocio le resulte simple cargar los sellos.
+No es una app para un solo negocio: es una plataforma multi-cliente (multi-tenant) donde puedo dar de alta negocios nuevos fácilmente.
+Objetivo
+Construir una aplicación web instalable (PWA) donde:
+• Cada negocio tiene su propio espacio, con su logo, sus colores, su link propio (por ejemplo, valisburger.miplataforma.com o /valisburger) y sus reglas de premios.
+• El cajero carga los sellos de forma rápida.
+• El cliente final consulta su tarjeta desde el celular.
+Stack técnico
+• Next.js (App Router, TypeScript) para frontend y backend.
+• Supabase para base de datos (Postgres), autenticación de los usuarios internos y Row Level Security, que separa los datos de cada negocio.
+• Vercel para el deploy.
+• PWA: el cliente puede agregarla a la pantalla de inicio sin pasar por App Store ni Google Play.
+• Diseño mobile-first, simple y claro. Interfaz en español (Argentina).
+Roles
+1. Superadministrador (yo): da de alta, edita y desactiva negocios, y configura su branding (logo, colores, nombre, slug).
+2. Dueño del negocio: configura las reglas de la tarjeta, gestiona a sus cajeros y ve estadísticas básicas (clientes registrados, sellos cargados y premios canjeados).
+3. Cajero: registra clientes, carga sellos y marca canjes. Su pantalla tiene que ser rapidísima y usable con una sola mano.
+4. Cliente final: se registra y consulta su tarjeta.
+Registro de clientes finales
+Hay dos formas de entrada:
+• Autorregistro: el cliente escanea un QR o acerca el celular a una etiqueta NFC que están en el local (impresos por la imprenta) y se registra con DNI, nombre y número de celular/WhatsApp.
+• Registro en caja: si el cliente no tiene cuenta, el cajero la crea en segundos con DNI, nombre y celular.
+El DNI es único por negocio. Un mismo DNI puede tener tarjetas en varios negocios distintos.
+Carga de sellos
+• Solo el cajero (usuario autenticado del negocio) puede cargar sellos. El cliente no puede sumarse sellos por su cuenta.
+• Flujo: el cajero busca al cliente por DNI, ingresa la cantidad de productos comprados (por ejemplo, 2 hamburguesas) y se suman esos sellos.
+• Cada movimiento queda registrado con fecha, hora, cajero y cantidad.
+• Por ahora no hay límites antiabuso: el control es responsabilidad de cada negocio.
+Reglas configurables por negocio
+• Cantidad de sellos para completar la tarjeta (por ejemplo, 6 o 9).
+• Premio (por ejemplo, una hamburguesa gratis o un descuento), con su texto descriptivo.
+• Vencimiento de sellos y de premios: viene con un valor estándar (proponer uno razonable) y el negocio lo puede modificar o desactivar.
+Canje del premio
+• Al completar la tarjeta, el cliente tiene un premio disponible.
+• El cajero marca el premio como canjeado y la tarjeta vuelve a empezar.
+• Debe quedar un historial de canjes.
+Consulta del cliente final
+• El cliente entra a la web del negocio con su DNI y su número de celular (sin contraseña ni código, por ahora).
+• Ve una tarjeta visual con los sellos perforados y los que faltan, con el branding del negocio, más su premio disponible y los vencimientos.
+Fuera de alcance por ahora (dejar preparado para el futuro)
+• Integración con WhatsApp (avisos automáticos y verificación por código).
+• Sucursales múltiples: si un cliente tiene varios locales, cada uno se da de alta como un negocio independiente.
+• Cobro de suscripciones dentro de la plataforma. A futuro: que el superadmin pueda enviar avisos de pago a cada negocio y suspender cuentas.
+• Límites antiabuso.
+• Integración con datos del RENAPER.
+Lo que necesito que hagas
+1. Proponé el modelo de datos (tablas, relaciones y políticas de Row Level Security).
+2. Proponé la estructura del proyecto y las pantallas por rol.
+3. Implementá un MVP funcional paso a paso, empezando por el alta de negocios, luego el registro de clientes, la carga de sellos, el canje y la vista del cliente.
+4. Incluí datos de ejemplo (seed) con el negocio Valisburger.
+5. Explicá cómo hacer el deploy en Vercel y Supabase. Soy principiante en tecnología, así que pedí confirmación antes de decisiones importantes y explicá cada paso de forma simple.
