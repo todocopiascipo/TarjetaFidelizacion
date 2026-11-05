@@ -45,3 +45,5 @@ next-env.d.ts
 
 # la plantilla sin valores sí se sube
 !.env.example
+
+.vercel
