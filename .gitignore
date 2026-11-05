@@ -42,3 +42,6 @@ next-env.d.ts
 
 # claves locales (nunca a GitHub)
 .env.local
+
+# la plantilla sin valores sí se sube
+!.env.example
