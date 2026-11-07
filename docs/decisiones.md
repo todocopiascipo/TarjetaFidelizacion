@@ -20,6 +20,12 @@ Estados: Pendiente → Confirmada (con fecha) o Descartada.
 | T-01 | Repositorio de GitHub privado (`todocopiascipo/TarjetaFidelizacion`) | Confirmada | 04/11/2026 |
 | T-02 | Claves nuevas de Supabase: `publishable` (reemplaza a `anon`) y `secret` (reemplaza a `service_role`). Nombres: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY` | Confirmada | 04/11/2026 |
 | T-03 | Commits firmados con todocopias.cipo@gmail.com (en vez del email privado de GitHub) | Confirmada | 04/11/2026 |
+| T-04 | Pruebas de base de datos con PGlite (Postgres dentro de Node), gratis y sin Docker | Confirmada | 06/11/2026 |
+| T-05 | Celulares guardados como `+549` + 10 dígitos; se acepta lo que la gente escribe (con 0, 15, +54, espacios) | Confirmada | 06/11/2026 |
+| T-06 | Funciones extra además de las del documento: `buscar_cliente_caja` (aplica vencimientos al buscar) y `negocio_publico` (marca y reglas para las páginas públicas, sin exponer tablas) | Confirmada | 06/11/2026 |
+| T-07 | `premios` guarda también `condiciones` (copia de `premio_descripcion`), para que RN-13 conserve título y condiciones | Confirmada | 06/11/2026 |
+| T-08 | Un negocio desactivado sigue dejando consultar tarjetas; solo se bloquean registros y cargas (RN-12) | Confirmada | 06/11/2026 |
+| T-09 | Next 16 con Cache Components activado (viene en la plantilla): lo que lee la sesión va dentro de `<Suspense>` | Confirmada | 06/11/2026 |
 
 ## Detalle de cada decisión
 (Cuando se confirme una, anotá acá el motivo.)

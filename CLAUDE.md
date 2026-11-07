@@ -47,4 +47,7 @@ La fuente de verdad es `docs/Documento_base_fidelizacion_v0.1.docx` (podés leer
 - F8 Mar 10: correcciones y demo.
 
 ## Estado actual
-Fase 0 completa (4/11). Web publicada en https://fidelizacion-ten.vercel.app (página de ejemplo). Supabase creado y vacío; claves en `.env.local` y Vercel. Próximo: Fase 1. Detalle en `docs/bitacora.md`.
+Fase 1 casi completa (6/11): migraciones, RLS, funciones, seed y login por rol escritos y probados localmente (`npm run probar:db`); login publicado en https://fidelizacion-ten.vercel.app. Falta aplicar la base en Supabase (`npx supabase db push --remote --include-seed` con `SUPABASE_ACCESS_TOKEN`) y correr `npm run crear:usuarios`. Detalle en `docs/bitacora.md`.
+
+Comandos útiles: `npm run probar:db` (pruebas de base de datos) · `npm run crear:usuarios` (usuarios internos de prueba) · `npm run lint` · `npm run build`.
+Next.js 16: `middleware.ts` ahora se llama `proxy.ts`; con Cache Components, lo que lee cookies/sesión va dentro de `<Suspense>`. Antes de usar una API de Next, mirá `node_modules/next/dist/docs/`.
