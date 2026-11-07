@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "probar:db": "node scripts/probar-db.mjs",
-    "crear:usuarios": "node --env-file=.env.local scripts/crear-usuarios.mjs"
+    "crear:usuarios": "node --env-file=.env.local scripts/crear-usuarios.mjs",
+    "probar:nube": "node --env-file=.env.local scripts/probar-nube.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

@@ -34,7 +34,7 @@ Cinco minutos al terminar cada día. Copiá el bloque de abajo y completalo.
 
 ---
 
-## Viernes 6/11 · Fase 1 (en curso)
+## Viernes 6/11 · Fase 1 completa
 - **Hice:**
   - Modo autonomía máxima y regla de gasto $0, registrados en `CLAUDE.md`. El skill ANTISLOP quedó en pausa.
   - Migraciones `0001_esquema` (7 tablas), `0002_rls` (funciones de ayuda + políticas) y `0003_funciones` (cargar_sellos, canjear_premio, registros, consultas y vencimientos).
@@ -42,13 +42,15 @@ Cinco minutos al terminar cada día. Copiá el bloque de abajo y completalo.
   - `npm run probar:db`: 35 pruebas en un Postgres local (PGlite, sin Docker). Todas pasan, incluida "el cajero de Pizzería Demo no ve nada de Valisburger".
   - Login con redirección por rol (`/admin`, `/panel`, `/caja`) y protección de esas rutas. Publicado en Vercel.
   - `npm run crear:usuarios`: crea superadmin, dueños y cajeros de prueba. Las contraseñas se generaron al azar y están solo en `.env.local`.
+  - Base aplicada en Supabase (`npx supabase db push --remote --include-seed`) y usuarios creados en la nube.
+  - `npm run probar:nube`: chequeo de seguridad contra la base real. El cajero de Pizzería Demo ve solo sus 2 clientes y no puede tocar Valisburger; el público no lee tablas.
 - **Falta:**
-  - Aplicar las migraciones y el seed en Supabase. Necesita el token de acceso (`SUPABASE_ACCESS_TOKEN` en `.env.local`).
-  - Crear los usuarios en la nube y probar el login de punta a punta.
+  - Que Esteban pruebe el login en el navegador con cada rol (la contraseña está en `.env.local`).
 - **Problemas:**
   - La plantilla de Next 16 trae "Cache Components": todo lo que lee la sesión tiene que ir dentro de `<Suspense>`. Resuelto.
   - El primer intento de pruebas falló por cómo Postgres corta una transacción después de un error. Se resolvió con savepoints.
-- **Próximo paso:** con el token, `supabase db push --remote --include-seed`, después `npm run crear:usuarios` y probar el login con cada rol.
+  - El proyecto de Supabase estaba en us-east-1 y no en São Paulo. Se mantiene (decisión T-10).
+- **Próximo paso:** Fase 2 (sábado 7): panel del superadmin (alta, edición y desactivación de negocios con logo y colores) y página pública `/[slug]`.
 
 ---
 

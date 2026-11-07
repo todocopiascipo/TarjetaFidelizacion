@@ -17,7 +17,7 @@ La fuente de verdad es `docs/Documento_base_fidelizacion_v0.1.docx` (podés leer
 
 ## Stack
 - Next.js (App Router, TypeScript), Tailwind CSS.
-- Supabase: Postgres, Auth (solo usuarios internos), Row Level Security, Storage (logos). Región São Paulo.
+- Supabase: Postgres, Auth (solo usuarios internos), Row Level Security, Storage (logos). Región us-east-1 (junto al servidor de Vercel; ver T-10).
 - Vercel para el deploy. GitHub para el código.
 - Mobile-first, interfaz en español (Argentina).
 
@@ -47,7 +47,7 @@ La fuente de verdad es `docs/Documento_base_fidelizacion_v0.1.docx` (podés leer
 - F8 Mar 10: correcciones y demo.
 
 ## Estado actual
-Fase 1 casi completa (6/11): migraciones, RLS, funciones, seed y login por rol escritos y probados localmente (`npm run probar:db`); login publicado en https://fidelizacion-ten.vercel.app. Falta aplicar la base en Supabase (`npx supabase db push --remote --include-seed` con `SUPABASE_ACCESS_TOKEN`) y correr `npm run crear:usuarios`. Detalle en `docs/bitacora.md`.
+Fase 1 completa (6/11): base de datos con RLS, funciones y seed aplicada en Supabase (proyecto `eqkqeboxmfeftbirgnmz`, región us-east-1, ver T-10); usuarios de prueba creados; login por rol publicado en https://fidelizacion-ten.vercel.app. Próximo: Fase 2. Detalle en `docs/bitacora.md`.
 
-Comandos útiles: `npm run probar:db` (pruebas de base de datos) · `npm run crear:usuarios` (usuarios internos de prueba) · `npm run lint` · `npm run build`.
+Comandos útiles: `npm run probar:db` (pruebas locales de la base) · `npm run probar:nube` (chequeo de seguridad en Supabase) · `npx supabase db push --remote --include-seed` (aplicar migraciones; requiere exportar SUPABASE_ACCESS_TOKEN de `.env.local`) · `npm run crear:usuarios` (usuarios internos de prueba) · `npm run lint` · `npm run build`.
 Next.js 16: `middleware.ts` ahora se llama `proxy.ts`; con Cache Components, lo que lee cookies/sesión va dentro de `<Suspense>`. Antes de usar una API de Next, mirá `node_modules/next/dist/docs/`.

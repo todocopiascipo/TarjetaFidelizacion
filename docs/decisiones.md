@@ -26,9 +26,11 @@ Estados: Pendiente → Confirmada (con fecha) o Descartada.
 | T-07 | `premios` guarda también `condiciones` (copia de `premio_descripcion`), para que RN-13 conserve título y condiciones | Confirmada | 06/11/2026 |
 | T-08 | Un negocio desactivado sigue dejando consultar tarjetas; solo se bloquean registros y cargas (RN-12) | Confirmada | 06/11/2026 |
 | T-09 | Next 16 con Cache Components activado (viene en la plantilla): lo que lee la sesión va dentro de `<Suspense>` | Confirmada | 06/11/2026 |
+| T-10 | Supabase queda en **us-east-1** (se creó ahí por error, no en São Paulo). Se mantiene porque Vercel gratis ejecuta el servidor en us-east-1 (iad1): base y servidor quedan juntos | Confirmada | 06/11/2026 |
 
 ## Detalle de cada decisión
 (Cuando se confirme una, anotá acá el motivo.)
 
 - **D-05:** mientras tanto se usa https://fidelizacion-ten.vercel.app (sigue Pendiente).
+- **T-10:** casi todas las consultas a la base salen del servidor de Vercel, no del celular. Con la base en São Paulo y el servidor en EE. UU., cada consulta cruzaría el continente. Si algún día se pasa Vercel a São Paulo (gru1), conviene mover también la base (crear proyecto nuevo y volver a correr `db push` + `crear:usuarios`).
 - **T-02:** Supabase hoy entrega estas claves por defecto. La `secret` cumple la misma regla que la vieja `service_role`: solo en el servidor, nunca en el navegador ni en GitHub.
