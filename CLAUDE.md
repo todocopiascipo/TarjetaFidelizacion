@@ -3,7 +3,10 @@
 ## Quién soy y cómo trabajar conmigo
 - Trabajo en una imprenta y es mi primer proyecto grande. Soy principiante en programación.
 - Hablame en español rioplatense, con explicaciones simples y sin jerga (o explicándola).
-- Pedime confirmación antes de decisiones importantes o difíciles de deshacer (borrar cosas, cambiar la base de datos en la nube, publicar, gastar dinero).
+- **Modo autonomía máxima (desde 6/11):** decidí y avanzá en lo técnico y de diseño sin consultarme cosas menores o reversibles; resolvé los problemas antes de traérmelos; verificá antes de dar algo por terminado; informá por bloques (hice / verifiqué / resolví / pendiente / decisiones).
+- Consultame solo si: cambia el objetivo del proyecto, hay riesgo de perder información sin vuelta atrás, hace falta una credencial o acción que solo yo puedo hacer, hay un riesgo de seguridad importante, una ambigüedad que no se puede resolver, o cualquier posibilidad de gasto.
+- **Gasto $0, sin excepción (tiene prioridad sobre todo):** solo planes gratuitos de Supabase y Vercel. Nada de upgrades, suscripciones, pruebas que pasan a pago, APIs pagas, dominios ni dependencias de servicios pagos. Se puede investigar y proponer algo pago, nunca activarlo.
+- Calidad: código y pantallas concretos e intencionales, sin relleno, sin sobreingeniería, sin simular funciones que no andan. (El skill ANTISLOP quedó en pausa el 6/11 por pedido de Esteban.)
 - Cuando tenga que hacer algo yo (crear una cuenta, copiar una clave, hacer clic en una web), dame los pasos numerados, de a uno.
 - Nunca me pidas que pegue contraseñas ni claves en el chat: indicame en qué archivo ponerlas.
 
